@@ -1,299 +1,73 @@
-/* RESET E VARIÁVEIS */
-:root {
-    --bg-color: #050505;       /* Fundo quase preto */
-    --card-bg: #111111;        /* Fundo dos cards */
-    --text-primary: #ffffff;
-    --text-secondary: #a0a0a0;
-    --accent-color: #00f3ff;   /* Ciano Neon */
-    --accent-hover: #00c3cc;
-    --border-color: #222;
-    --font-main: 'Inter', sans-serif;
-    --font-code: 'Fira Code', monospace;
-}
+/* =========================================
+   NOVAS ADIÇÕES: IMAGENS E INTERDIÇÃO
+   ========================================= */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background-color: var(--bg-color);
-    color: var(--text-primary);
-    font-family: var(--font-main);
-    line-height: 1.6;
-    overflow-x: hidden; /* Evita rolagem lateral indesejada */
-}
-
-a { text-decoration: none; color: inherit; transition: 0.3s; }
-ul { list-style: none; }
-
-/* NAVBAR */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 8%;
-    background: rgba(5, 5, 5, 0.9);
-    backdrop-filter: blur(10px); /* Efeito de vidro */
-    position: fixed;
+/* Espaço para as imagens dos Apps */
+.app-preview {
     width: 100%;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.logo {
-    font-family: var(--font-code);
-    font-size: 1.5rem;
-    font-weight: 700;
-    letter-spacing: -1px;
-}
-
-.dot { color: var(--accent-color); animation: blink 1s infinite; }
-
-@keyframes blink { 50% { opacity: 0; } }
-
-.nav-links { display: flex; gap: 30px; align-items: center; }
-.nav-links a:hover { color: var(--accent-color); }
-
-.btn-contact {
-    border: 1px solid var(--accent-color);
-    padding: 8px 24px;
-    border-radius: 4px;
-    color: var(--accent-color);
-    font-size: 0.9rem;
-    font-weight: 600;
-}
-
-.btn-contact:hover {
-    background: var(--accent-color);
-    color: #000;
-    box-shadow: 0 0 15px rgba(0, 243, 255, 0.4); /* Glow effect */
-}
-
-/* HERO SECTION */
-.hero {
-    min-height: 100vh;
+    height: 180px;
+    background: #1a1a1a;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px dashed #333;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 100px 8% 0; /* Padding top para compensar a navbar fixa */
-    text-align: center;
-}
-
-.tagline {
-    font-family: var(--font-code);
-    color: var(--accent-color);
-    font-size: 0.9rem;
-    display: block;
-    margin-bottom: 15px;
-}
-
-.hero h1 {
-    font-size: 3.5rem;
-    line-height: 1.1;
-    margin-bottom: 20px;
-    font-weight: 800;
-}
-
-.highlight {
-    background: linear-gradient(90deg, var(--accent-color), #bc13fe);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.hero p {
-    color: var(--text-secondary);
-    max-width: 600px;
-    margin: 0 auto 40px auto;
-    font-size: 1.1rem;
-}
-
-.hero-btns { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
-
-.btn {
-    padding: 14px 35px;
-    border-radius: 5px;
-    font-weight: 600;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-.primary {
-    background: var(--accent-color);
-    color: #050505;
-    border: 1px solid var(--accent-color);
-}
-
-.primary:hover {
-    background: transparent;
-    color: var(--accent-color);
-    box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
-}
-
-.secondary {
-    border: 1px solid #333;
-    color: var(--text-primary);
-    background: transparent;
-}
-
-.secondary:hover { border-color: var(--text-primary); background: rgba(255,255,255,0.05); }
-
-/* SEÇÕES GERAIS */
-.section { padding: 100px 8%; }
-
-.section-title {
-    font-size: 2rem;
-    margin-bottom: 50px;
+    overflow: hidden;
     position: relative;
-    display: inline-block;
 }
 
-.section-title::after {
-    content: '';
+/* Estilo para quando você colocar a imagem real */
+.preview-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none; /* Fica oculto até ter uma imagem válida */
+}
+
+/* Imagem temporária (Placeholder) */
+.placeholder-img::before {
+    content: "IMAGEM DO APP AQUI";
+    font-family: var(--font-code);
+    color: #444;
+    font-size: 0.9rem;
     position: absolute;
-    width: 60px;
-    height: 4px;
-    background: var(--accent-color);
-    bottom: -10px;
-    left: 0;
-}
-
-/* CARDS DE PROJETOS */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-}
-
-.card {
-    background: var(--card-bg);
-    padding: 30px;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-    transition: 0.3s ease;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: #1a1a1a;
 }
 
-.card:hover {
+/* App com Imagem (Para você usar no futuro) */
+.app-preview.has-image { border: 1px solid var(--border-color); }
+.app-preview.has-image .preview-img { display: block; }
+.app-preview.has-image .placeholder-img::before { display: none; }
+
+/* Visual Interditado (GhostMsg) */
+.interditado {
+    border-color: #ff3333;
+    opacity: 0.8;
+}
+
+.interditado:hover {
+    border-color: #ff0000;
+    box-shadow: 0 10px 30px -10px rgba(255, 0, 0, 0.3);
     transform: translateY(-5px);
-    border-color: var(--accent-color);
-    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
 }
 
-.card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+.tech-tag.warning {
+    background: rgba(255, 51, 51, 0.15);
+    color: #ff4444;
+    border: 1px solid #ff4444;
 }
 
-.folder-icon { font-size: 1.5rem; color: var(--accent-color); }
-
-.tech-tag {
-    font-family: var(--font-code);
-    font-size: 0.75rem;
-    color: var(--accent-color);
-    background: rgba(0, 243, 255, 0.1);
-    padding: 4px 8px;
-    border-radius: 4px;
+.folder-icon.locked {
+    color: #ff4444;
 }
 
-.card h3 { margin-bottom: 10px; font-size: 1.4rem; }
-.card p { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 25px; flex-grow: 1; }
-
-.card-footer {
-    display: flex;
-    gap: 15px;
-    border-top: 1px solid #222;
-    padding-top: 15px;
-}
-
-.lang {
-    font-family: var(--font-code);
-    font-size: 0.8rem;
-    color: #666;
-}
-
-/* COMUNIDADE / FERRAMENTAS */
-.dark-bg { background: #080808; border-top: 1px solid #111; border-bottom: 1px solid #111; }
-
-.tools-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.tool-item {
-    background: #111;
-    padding: 15px 25px;
-    border-radius: 8px;
-    border: 1px solid #222;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    min-width: 250px;
-    flex: 1;
-}
-
-.tool-item:hover {
-    border-color: var(--accent-color);
-    background: #161616;
-}
-
-.tool-item .icon { font-size: 1.5rem; }
-
-.tool-info strong { display: block; color: var(--text-primary); }
-.tool-info small { color: var(--text-secondary); font-size: 0.8rem; }
-
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 60px 8%;
-    background: var(--bg-color);
-}
-
-.footer-content h3 { font-size: 1.5rem; margin-bottom: 10px; }
-.socials { margin: 20px 0; display: flex; justify-content: center; gap: 25px; }
-.socials a { color: var(--text-secondary); font-size: 0.9rem; }
-.socials a:hover { color: var(--accent-color); }
-.copy { color: #444; font-size: 0.8rem; }
-
-/* MOBILE / RESPONSIVO */
-.hamburger { display: none; cursor: pointer; }
-.bar { display: block; width: 25px; height: 3px; margin: 5px auto; background-color: var(--text-primary); transition: 0.3s; }
-
-@media (max-width: 768px) {
-    .hamburger { display: block; z-index: 1001; }
-    
-    .nav-links {
-        position: fixed;
-        left: -100%;
-        top: 0;
-        flex-direction: column;
-        background-color: #050505;
-        width: 100%;
-        height: 100vh;
-        justify-content: center;
-        text-align: center;
-        transition: 0.4s ease;
-        padding-top: 60px;
-    }
-
-    .nav-links.active { left: 0; }
-
-    .nav-links li { margin: 20px 0; }
-    
-    .hero h1 { font-size: 2.5rem; }
-    
-    /* Animação do Hamburger */
-    .hamburger.active .bar:nth-child(2) { opacity: 0; }
-    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+.strike {
+    text-decoration: line-through;
+    opacity: 0.5;
 }
