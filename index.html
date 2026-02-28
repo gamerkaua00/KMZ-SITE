@@ -3,21 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KMZ Tech | Inovação e Automação</title>
-    <link rel="stylesheet" href="style.css">
+    <title>KMZ Tech | Soluções & Comunidade</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> </head>
+</head>
 <body>
 
     <nav class="navbar">
-        <div class="logo">KMZ<span class="dot">.</span></div>
+        <div class="logo">KMZ<span class="dot">_</span></div>
+        
         <ul class="nav-links">
             <li><a href="#home">Início</a></li>
             <li><a href="#projetos">Projetos</a></li>
             <li><a href="#comunidade">Comunidade</a></li>
             <li><a href="#contato" class="btn-contact">Contato</a></li>
         </ul>
+
         <div class="hamburger">
             <span class="bar"></span>
             <span class="bar"></span>
@@ -27,96 +32,106 @@
 
     <header id="home" class="hero">
         <div class="hero-content">
-            <span class="tagline">// WELCOME TO THE FUTURE</span>
-            <h1>Desenvolvimento, <br> <span class="highlight">Automação</span> & Código.</h1>
-            <p>Soluções profissionais em tecnologia e ferramentas open-source para a comunidade.</p>
+            <span class="tagline">&lt;system_ready /&gt;</span>
+            <h1>Inovação em <br> <span class="highlight">Código & Hardware</span></h1>
+            <p>Desenvolvimento de soluções tecnológicas, automação industrial e ferramentas open-source para a comunidade.</p>
             <div class="hero-btns">
-                <a href="#projetos" class="btn primary">Ver Projetos</a>
-                <a href="https://github.com/seu-usuario" target="_blank" class="btn secondary">GitHub</a>
+                <a href="#projetos" class="btn primary">Ver Portfólio</a>
+                <a href="https://github.com/seu-usuario/kmz-site" target="_blank" class="btn secondary">GitHub</a>
             </div>
         </div>
     </header>
 
     <section id="projetos" class="section">
-        <h2 class="section-title">Projetos em Destaque</h2>
+        <h2 class="section-title">Projetos Principais</h2>
         <div class="grid-container">
+            
             <div class="card">
                 <div class="card-header">
                     <span class="folder-icon">📂</span>
-                    <div class="links">
-                        <a href="#" target="_blank">🔗</a>
-                    </div>
+                    <span class="tech-tag">WEB APP</span>
                 </div>
                 <h3>EletroNIC</h3>
-                <p>Aplicação focada em eletrônica digital. Realiza cálculos de tabelas verdade, mapas de Karnaugh e conversão de bases.</p>
-                <ul class="tech-list">
-                    <li>JavaScript</li>
-                    <li>Lógica</li>
-                    <li>Eletrônica</li>
-                </ul>
+                <p>Ferramenta completa para estudantes de eletrônica digital. Calcula tabelas verdade, mapas de Karnaugh e conversores de base.</p>
+                <div class="card-footer">
+                    <span class="lang">JS</span>
+                    <span class="lang">Math</span>
+                </div>
             </div>
 
             <div class="card">
                 <div class="card-header">
-                    <span class="folder-icon">📂</span>
-                    <div class="links">
-                        <a href="#" target="_blank">🔗</a>
-                    </div>
+                    <span class="folder-icon">🔒</span>
+                    <span class="tech-tag">SECURITY</span>
                 </div>
                 <h3>GhostMsg</h3>
-                <p>Ferramenta de criptografia de mensagens focada em privacidade e segurança de dados.</p>
-                <ul class="tech-list">
-                    <li>Criptografia</li>
-                    <li>Segurança</li>
-                    <li>Web</li>
-                </ul>
+                <p>Sistema de criptografia de mensagens focado em privacidade e segurança de dados pessoais.</p>
+                <div class="card-footer">
+                    <span class="lang">Crypto</span>
+                    <span class="lang">Web</span>
+                </div>
             </div>
 
             <div class="card">
                 <div class="card-header">
-                    <span class="folder-icon">📂</span>
-                    <div class="links">
-                        <a href="#" target="_blank">🔗</a>
-                    </div>
+                    <span class="folder-icon">🎮</span>
+                    <span class="tech-tag">GAME</span>
                 </div>
                 <h3>Super Capi World</h3>
-                <p>Jogo de plataforma inspirado em clássicos, desenvolvido com foco em mecânicas divertidas.</p>
-                <ul class="tech-list">
-                    <li>Game Dev</li>
-                    <li>Lógica</li>
-                    <li>Design</li>
-                </ul>
+                <p>Jogo de plataforma inspirado em clássicos (Mario World), com mecânicas desafiadoras e arte pixelada.</p>
+                <div class="card-footer">
+                    <span class="lang">GameDev</span>
+                    <span class="lang">Logic</span>
+                </div>
             </div>
+
         </div>
     </section>
 
     <section id="comunidade" class="section dark-bg">
         <div class="content-wrapper">
-            <h2>Comunidade & Open Source</h2>
-            <p>A KMZ acredita que o conhecimento deve ser compartilhado. Acesse nossas ferramentas gratuitas e contribua.</p>
-            <br>
+            <h2 class="section-title">Área da Comunidade</h2>
+            <p>A KMZ acredita no código aberto. Acesse ferramentas gratuitas desenvolvidas para estudantes e devs.</p>
+            
             <div class="tools-grid">
                 <a href="#" class="tool-item">
-                    <span>⚡</span> Tabela Verdade Online
+                    <span class="icon">⚡</span> 
+                    <div class="tool-info">
+                        <strong>Tabela Verdade Online</strong>
+                        <small>Gerador automático</small>
+                    </div>
                 </a>
                 <a href="#" class="tool-item">
-                    <span>🔒</span> Encriptador Base64
+                    <span class="icon">🤖</span> 
+                    <div class="tool-info">
+                        <strong>Snippets Arduino</strong>
+                        <small>Códigos prontos</small>
+                    </div>
                 </a>
                 <a href="#" class="tool-item">
-                    <span>🤖</span> Documentação Arduino
+                    <span class="icon">🔢</span> 
+                    <div class="tool-info">
+                        <strong>Conversor Binário</strong>
+                        <small>Base 2, 8, 10, 16</small>
+                    </div>
                 </a>
             </div>
         </div>
     </section>
 
     <footer id="contato">
-        <p>KMZ Tech &copy; 2025. Todos os direitos reservados.</p>
-        <div class="socials">
-            <a href="https://github.com/seu-usuario">GitHub</a>
-            <a href="https://linkedin.com/in/seu-usuario">LinkedIn</a>
+        <div class="footer-content">
+            <h3>KMZ Tech</h3>
+            <p>Campo Largo - PR, Brasil</p>
+            <div class="socials">
+                <a href="https://github.com/seu-usuario" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/seu-usuario" target="_blank">LinkedIn</a>
+                <a href="mailto:contato@kmz.com" target="_blank">Email</a>
+            </div>
+            <p class="copy">&copy; 2025 KMZ Tech. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
